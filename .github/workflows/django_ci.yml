@@ -20,8 +20,9 @@ jobs:
 
     - name: Instalar dependências do projeto
       run: |
-        pip install --no-cache-dir --upgrade pip
-        pip install --no-cache-dir -r ./src/requirements.txt
+        ls
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
        
     - name: Verificar sintaxe
       run: pylint $(git ls-files '*.py')
