@@ -16,7 +16,10 @@ jobs:
         python-version: '3.10'
 
     - name: Instalar dependências do projeto
-      run: cd src && pip install --no-cache-dir --upgrade pip && pip install -r requirements.txt
+      working-directoty: ./src
+      run: |
+        pip install --no-cache-dir --upgrade pip
+        pip install -r requirements.txt
        
     - name: Verificar sintaxe
       run: pylint $(git ls-files '*.py')
